@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- we prefer to use html of much as we can as it is faster ,feature are avaliable easily
+    using much js makes website slower  -->
+
+    <!-- HTML-first development can help improve:
+        Page speed
+        Accessibility
+        Search engine visibility
+        Maintainability
+        Reliability -->
+
+        <!-- progressive Enchancement 
+        Build a basic version of a website that works for everyone first,
+        then add advanced features for browsers/devices that support them. -->
+
+        <!-- details -->
+         <details>
+            <summary>Get Info</summary>
+            <p>This is a demo ,while working with html first</p>
+         </details>
+
+         <!-- html does need need complilation,less js means that faster page loading   -->
+          <!-- this is noticeable when net is slow  
+          Smaller pages load faster, use less memory, and feel more responsive. -->
+          <!-- html start working when it browser receive it  -->
+           <!-- semantic improves Accessibility, helps screen readers,
+           search engines, keyboard users, and other tools understand the page -->
+           <!-- HTML-first does not mean JavaScript never. It means HTML before JavaScript.js is useful when many interactive feature  -->
+            
+            <!-- Progressive Enhancement	Graceful Degradation
+            Starts simple	Starts advanced
+            Adds features later	Removes unsupported features
+            Focuses on accessibility	Focuses on compatibility -->
+
+
+            <!-- type="date"
+            type="url"
+            type="search" -->
+            <form action="" method="post">
+                <lable for="birthday" type="date">DOB:</lable>
+                <input  type="date" id="birthday" name="birthday" required>
+                <button type="submit">Submit</button>
+                <!-- for id se connect karta hai and name form submit karne per data ka naam -->
+                    <!-- id	Input ki unique identity
+                    for	    Label ko kis input se connect karna hai
+                    name	Form submit hone par data ka naam/key -->
+                <br>
+                 <label for="programming">Choose a programming language</label>
+                 <input list="program" name="proguramming" id="programming">
+                 <datalist id="program">
+                    <option value="Node js"></option>
+                    <option value="React"></option>
+                    <option value="Express js "></option>
+                    <option value="django"></option>
+                 </datalist> 
+                 <!-- for id see connect hoga -->
+            </form>
+            <hr>
+            <br><br>
+            <!-- <dialog> ek modal/popup box banane ke liye use hota hai. -->
+            <dialog>
+                <p>this is a closed dialog elements</p>
+            </dialog>
+            <dialog open>
+                <p>this is a opened dialog elements</p>
+            </dialog>
+            <!-- by default close hota hai  -->
+        <dialog id="myDialog">
+            <h2>Delete Account?</h2>
+
+            <p>Are you sure?</p>
+            <button onclick="myDialog.close()">
+                Cancel
+            </button>
+        </dialog>
+        <button onclick="myDialog.showModal()">
+            Delete Account
+        </button>
+        <!-- Method	Result
+        show()	Dialog visible
+        showModal()	Dialog visible + modal
+        close()	Dialog invisible -->
+        <script>
+            
+        </script>
+</body>
+</html>

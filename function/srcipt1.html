@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /*document.write("diffrence between let,var,const");
+        document.write("let-one assign can assign it again but you can update the value");
+        document.write("var-you can assign and update value you want as many as time");
+        document.write("const- cannt assign value and not even update them ");
+
+        console.warn("this is warn ");*/
+//remove duplicate 
+/*function duplicate(arr){
+    let duplicate=[];
+    for(let i =0;i<arr.length;i++){
+        if (!duplicate.includes(arr[i])){
+            duplicate.push(arr[i]);
+        }
+    }
+    return duplicate;
+}
+let arr=[1,4,6,9,5,3,5,2,4];
+console.log(duplicate(arr));*/
+
+/*6. Find Second Largest Number
+Input: [10,5,8,20]
+Output: 10*/
+//approch : 1.sort 2. loop 
+//
+/*
+function secondlargest(arr){
+    let first =-Infinity;
+    let second =-Infinity;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>first){
+          second=first;
+          first=arr[i];
+        }
+        else if (arr[i]>second && arr[i]!=first)
+        {second=arr[i]; }
+}
+
+return second;
+
+}
+arr=[1,5,73,93,97,23,80];
+console.log(secondlargest(arr));*/
+
+//Find the third largest number without sorting.-same approach
+// pattern question
+/* 
+1
+22
+333
+4444*/
+/*let n=4;
+
+for(let i =0;i<=n;i++){
+    let row="";
+    for(let j=1;j<=i;j++){
+        row+=i;
+    }
+    console.log(row);
+}*/
+
+//for each loop
+//syntax-array.forEach(function(currentValue, index, arr), thisValue)
+/*
+let number=[1,2,3,4,5,7];
+function double((element,index,array),element){
+    array[index]=element*2
+}
+number.forEach(double);
+console.log(element);*/
+
+//argument.length -it is used to know how many arguments are passed
+//toString-
+
+setTimeout()
+/*8. Password Strength Checker
+Check:
+length >= 8
+contains number
+contains uppercase
+
+Return:
+"Strong Password"
+"Weak Password"*/
+
+/*12. Callback Real-Life Example
+Create:
+processPayment(amount, callback)
+
+After payment:
+callback prints "Payment Successful"*/
+
+/*15. Flipkart Delivery Checker
+Create function:
+checkDelivery(pincode)
+
+Available pincodes:
+[400001, 400002, 400003]
+
+Return:
+"Delivery Available"
+"Not Available"*/
+
+/*16. Debounce Search Function
+Like:
+YouTube search
+Google search suggestions
+
+Implement debounce using functions + setTimeout.*/
+
+/*10. Bank Interest Calculator
+Create an arrow function:
+calculateInterest(principal, rate, time)
+
+Formula:
+Simple Interest = (P × R × T) / 100
+
+Example:
+calculateInterest(10000, 5, 2);*/
+ 
+/*7. E-commerce Discount System
+Create a function:
+applyDiscount(price, discount)
+
+Example:
+applyDiscount(1000, 10);
+
+Output:900*/
+
+/*6. OTP Generator
+Create a function to generate a random 4-digit OTP.
+
+Example:
+generateOTP();
+
+Output:
+4821
+
+Use:
+Math.random()
+arrow function*/
+
+
+//==============================notes========================================================================
+//function declaration--defining function is called function defination
+
+//function expression(Named)--it is a specific way of defining function 
+
+//function expression(Anonymous) 
+
+//hoisting--declaring before the scope "JavaScript processes declarations first, then executes code line by line."
+//let, const, and class hoisting can lead to errors because they are hoisted without initialization
+
+
+/*| Declaration Type     | Hoisted       | Initialized   | Usable Before Declaration |
+| -------------------- | ------------- | ------------- | ------------------------- |
+| `var`                | Yes           | `undefined`   | Yes                       |
+| `let`                | Yes           | No            | No                        |
+| `const`              | Yes           | No            | No                        |
+| Function declaration | Yes           | Full function | Yes                       |
+| Function expression  | Variable only | `undefined`   | No                        |
+| Class                | Yes           | No            | No                        |*/
+
+/*
+
+`let`, `const`, and `class` hoisting can lead to errors because they are hoisted **without initialization**.
+This creates the **Temporal Dead Zone (TDZ)** — the time between entering the scope and the actual declaration line.
+
+Example with `let`:
+console.log(a); // ReferenceError
+let a = 10;
+
+
+Here:
+* `a` is hoisted
+* but not initialized
+* accessing it before declaration throws a `ReferenceError`
+
+The same happens with `const`:
+console.log(b); // ReferenceError
+const b = 20;
+
+
+And classes:
+const p = new Person(); // ReferenceError
+class Person {}
+
+
+By contrast, `var` does **not** throw this error because it is initialized with `undefined` during hoisting.
+console.log(x); // undefined
+var x = 5;
+
+*/
+
+// Arrow Function
+
+// Function Constructor
+
+// Object Method
+
+
+
+</script>
+</body>
+</html>

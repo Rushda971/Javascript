@@ -1,0 +1,36 @@
+Name	Description
+length	Returns the number of elements in an HTMLCollection
+item()	Returns the element at a specified index
+namedItem() Returns the element with a specified id
+
+Name	Description
+entries()	Returns an Iterator with the key/value pairs from the list
+forEach()	Executes a callback function for each node in the list
+item()	Returns the node at a specified index
+keys()	Returns an Iterator with the keys from the list
+length	Returns the number of nodes in a NodeList
+values()	Returns an Iterator with the values from the list
+
+DOMTokenList Properties and Methods
+Name	Description
+add()	Adds one or more tokens to the list
+contains()	Returns true if the list contains a class
+entries()	Returns an Iterator with key/value pairs from the list
+forEach()	Executes a callback function for each token in the list
+item()	Returns the token at a specified index
+keys()	Returns an Iterator with the keys in the list
+length	Returns the number of tokens in the list
+remove()	Removes one or more tokens from the list
+replace()	Replaces a token in the list
+supports()	Returns true if a token is one of an attribute's supported tokens
+toggle()	Toggles between tokens in the list
+value	Returns the token list as a string
+values()	Returns an Iterator with the values in the list
+
+Method	Description	Belongs To
+getModifierState()	Returns true if a specified key is activated	MouseEvent
+getTargetRanges()	Returns an array containing target ranges that will be affected by the insertion/deletion	InputEvent
+preventDefault()	Cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur	Event
+stopImmediate
+Propagation()	Prevents other listeners of the same event from being called	Event
+stopPropagation()	Prevents further propagation of an event during event flow	Event

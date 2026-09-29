@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>table Generator</h1>
+    Enter input:
+    <input type="number" id="num" min="1"><br><br>
+      <!-- result:
+    <input type="text" readonly id="result"><br><br> -->
+    Result:<br>
+    <textarea id="result" rows="10" cols="25" readonly></textarea>
+    <br><br>
+    
+    <button onclick="table()">Submit</button><br><br>
+  
+
+    <script>
+        
+        //function parameter is never passed when click button
+        function table(){
+            let num=parseInt(document.getElementById("num").value);
+            let result="";
+            for(let i=1;i<=10;i++){
+                result+=num+"*"+i+"="+(num*i)+"\n";
+            }
+            
+            document.getElementById("result").value=result;
+        }
+        
+        
+        
+    </script>
+</body>
+</html>

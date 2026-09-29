@@ -1,0 +1,134 @@
+#Phase 1 (Selection)
+
+querySelector()
+querySelectorAll()
+
+Phase 2 (Content)
+textContent
+innerHTML
+
+Phase 3 (Styling)
+
+style
+classList
+
+Phase 4 (Events)
+
+addEventListener()
+removeEventListener()
+
+Phase 5 (DOM Manipulation)
+
+createElement()
+appendChild()
+append()
+prepend()
+before()
+after()
+remove()
+replaceChild()
+
+Phase 6 (Attributes)
+
+setAttribute()
+getAttribute()
+removeAttribute()
+
+Phase 7 (Traversal)
+
+parentElement
+children
+firstElementChild
+lastElementChild
+nextElementSibling
+previousElementSibling
+closest()
+
+Phase 8 (Measurements & Scrolling)
+
+offsetWidth
+offsetHeight
+getBoundingClientRect()
+scrollIntoView()
+scrollTop
+
+🚀 Real Project Mapping
+Login Form
+querySelector()
+addEventListener()
+focus()
+textContent()
+setAttribute()
+classList.add()
+Todo App
+createElement()
+appendChild()
+remove()
+classList.toggle()
+textContent()
+Dark Mode
+querySelector()
+
+classList.toggle()
+
+style
+Image Gallery
+querySelectorAll()
+
+getAttribute()
+
+setAttribute()
+
+addEventListener()
+
+Chat App
+createElement()
+
+append()
+
+scrollIntoView()
+
+scrollTop()
+
+textContent()
+
+name	Returns an attribute's name
+value	Sets or returns an attribute's value
+specified	Returns true if the attribute is specified
+NamedNodeMap Properties and Methods
+Method	Description
+getNamedItem()	Returns an attribute node (by name) from a NamedNodeMap
+item()	Returns an attribute node (by index) from a NamedNodeMap
+length	Returns the number of attributes in a NamedNodeMap
+removeNamedItem()	Removes an attribute (node)
+setNamedItem()	Sets an attribute (node) by name
+
+Name	Description
+length	Returns the number of elements in an HTMLCollection
+item()	Returns the element at a specified index
+namedItem()	Returns the element with a specified id
+
+Name	Description
+entries()	Returns an Iterator with the key/value pairs from the list
+forEach()	Executes a callback function for each node in the list
+item()	Returns the node at a specified index
+keys()	Returns an Iterator with the keys from the list
+length	Returns the number of nodes in a NodeList
+values()	Returns an Iterator with the values from the list
+
+Name	Description
+add()	Adds one or more tokens to the list
+contains()	Returns true if the list contains a class
+entries()	Returns an Iterator with key/value pairs from the list
+forEach()	Executes a callback function for each token in the list
+item()	Returns the token at a specified index
+keys()	Returns an Iterator with the keys in the list
+length	Returns the number of tokens in the list
+remove()	Removes one or more tokens from the list
+replace()	Replaces a token in the list
+supports()	Returns true if a token is one of an attribute's supported tokens
+toggle()	Toggles between tokens in the list
+value	Returns the token list as a string
+values()	Returns an Iterator with the values in the list
+
+https://www.w3schools.com/jsref/dom_obj_event.asp

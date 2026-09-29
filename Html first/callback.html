@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //callback
+        function greet(callback){
+            console.log("learn callback function!!!");
+            callback()
+        }
+        greet(function(){
+            console.log("Haaaveee a good day!!!");
+        });
+        /*2. Downloading a File 📥
+
+        When a user downloads a file, it takes a few seconds.
+
+        Question:
+        Write a function downloadFile(callback) that:
+
+        Prints "Downloading..."
+        Waits 3 seconds
+        Calls the callback
+        Callback prints "Download Complete"
+
+        Think about:
+
+        Why is this callback asynchronous?
+        What would happen if it were synchronous?*/
+
+        /*function downloadFile(file){
+            console.log(" file started downloading");
+            setTimeout(()=>{file()},3000);
+        }
+
+        downloadFile(function(){
+            console.log(" file downloaded suceessfully....!")
+        });*/
+
+        //and if ismai agar muhje reverse download count run karna hai tab 
+        //1. approach-setInterval
+        function downloadFile(file){
+            console.log(" file started downloading");
+            let count=3;
+            const countDown=setInterval(()=>{
+                console.log(count)
+                count--;
+                if (count===0){
+                    clearInterval(countDown);
+                    file();
+                }
+            },1000)
+        }
+        downloadFile(function(){
+            console.log(" file downloaded suceessfully....!")
+        });
+
+        //2.multiple setTimeout
+         
+       /* If you're preparing for **JavaScript interviews**, here are some real-life scenario questions instead of simple "predict the output" questions.
+
+---
+
+## 1. Food Delivery App 🍕
+
+You are building a food delivery app.
+
+```javascript
+function placeOrder(order, callback) {
+    console.log("Order placed:", order);
+    callback();
+}
+
+placeOrder("Pizza", function () {
+    console.log("Preparing pizza...");
+});
+```
+
+**Questions:**
+
+* Is the callback synchronous or asynchronous?
+* Is this how a real food delivery app should work? Why or why not?
+* How would you make it more realistic?
+
+---
+
+## 2. Downloading a File 📥
+
+When a user downloads a file, it takes a few seconds.
+
+**Question:**
+Write a function `downloadFile(callback)` that:
+
+* Prints `"Downloading..."`
+* Waits 3 seconds
+* Calls the callback
+* Callback prints `"Download Complete"`
+
+**Think about:**
+
+* Why is this callback asynchronous?
+* What would happen if it were synchronous?
+
+---
+
+## 3. Login System 🔐
+
+Suppose a website checks your username and password from a server.
+
+```javascript
+login(username, password, callback);
+```
+
+**Questions:**
+
+* Should `callback` be synchronous or asynchronous?
+* Why?
+* What happens while the server is checking the credentials?
+
+---
+
+## 4. Reading a File 📄 (Node.js)
+
+You're reading a large file from disk.
+
+```javascript
+readFile("data.txt", callback);
+```
+
+**Questions:**
+
+* Why shouldn't the callback execute immediately?
+* What problem would synchronous file reading cause in a web server?
+
+---
+
+## 5. Payment Gateway 💳
+
+A user clicks **Pay Now**.
+
+The payment gateway takes 5 seconds to verify the payment.
+
+**Question:**
+Which is better?
+
+### Option A
+
+```javascript
+pay(amount, callback);
+```
+
+where callback is synchronous.
+
+### Option B
+
+```javascript
+pay(amount, callback);
+```
+
+where callback runs after the payment is verified.
+
+**Explain your choice.**
+
+---
+
+## 6. Image Upload 📷
+
+A user uploads a 50 MB image.
+
+**Questions:**
+
+* Should the upload callback be synchronous or asynchronous?
+* What can the user do while the image uploads?
+* Why is asynchronous programming useful here?
+
+---
+
+## 7. Notification System 🔔
+
+After a user registers, the app:
+
+* Saves the user
+* Sends a welcome email
+
+Should the email callback:
+
+* execute immediately (synchronous), or
+* execute after the email service responds (asynchronous)?
+
+Explain your answer.
+
+---
+
+## 8. Timer App ⏰
+
+You are building an alarm app.
+
+```javascript
+setAlarm(5000, callback);
+```
+
+**Questions:**
+
+* Why is the callback asynchronous?
+* What should happen while waiting for 5 seconds?
+
+---
+
+## 9. Chat Application 💬
+
+A user sends a message.
+
+The server must first receive and store it.
+
+**Questions:**
+
+* Should the callback run before the server confirms?
+* Or after the server responds?
+* Why?
+
+---
+
+## 10. Interview-Level Scenario ⭐
+
+You have this function:
+
+```javascript
+function fetchUser(callback) {
+    // Fetch user from database
+}
+```
+
+The database takes around **2 seconds** to respond.
+
+**Questions:**
+
+1. Should the callback be synchronous or asynchronous?
+2. What would happen to the application if it were synchronous?
+3. Why do Node.js APIs generally use asynchronous callbacks for I/O operations?
+
+---
+
+These kinds of scenario-based questions are common in interviews because they test whether you understand **when** to use synchronous vs. asynchronous callbacks, not just how they behave in code. If you can confidently answer these, you'll have a strong grasp of the concept.
+*/
+    </script>
+</body>
+</html>

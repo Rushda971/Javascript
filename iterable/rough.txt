@@ -1,0 +1,205 @@
+Bilkul! Ye 7 naye **logical Set methods** modern JavaScript (2024-2025 me baseline) me add hue hain. In sabka kaam hai do Sets ko compare/combine karna — bilkul **math ke Set theory** jaisa (Union, Intersection, Difference wagera).
+
+Chaliye ek-ek karke samajhte hain.
+
+---
+
+## 1. `union()` — Dono Sets ko milana
+
+Dono sets ke saare unique elements ek saath.
+
+```js
+const setA = new Set([1, 2, 3]);
+const setB = new Set([3, 4, 5]);
+
+console.log(setA.union(setB)); 
+// Set(5) {1, 2, 3, 4, 5}
+```
+
+**Real-life use case:** Do alag classes ke students ki list milani ho (jo dono me common hain wo ek hi baar aaye).
+```js
+const class10Students = new Set(["Amit", "Riya", "Sara"]);
+const class11Students = new Set(["Sara", "Karan", "Neha"]);
+
+const allStudents = class10Students.union(class11Students);
+console.log(allStudents); // Set(4) {'Amit', 'Riya', 'Sara', 'Karan', 'Neha'}
+```
+
+---
+
+## 2. `intersection()` — Sirf common elements
+
+Jo dono sets me **common** hai, sirf wahi.
+
+```js
+const setA = new Set([1, 2, 3]);
+const setB = new Set([2, 3, 4]);
+
+console.log(setA.intersection(setB)); 
+// Set(2) {2, 3}
+```
+
+**Real-life use case:** Do dosto ke favorite movies ki list, jisme dekhna hai dono ko konsi movies pasand hai.
+```js
+const rahulLikes = new Set(["Inception", "Dangal", "3 Idiots"]);
+const priyaLikes = new Set(["Dangal", "Zindagi Na Milegi Dobara", "3 Idiots"]);
+
+const commonMovies = rahulLikes.intersection(priyaLikes);
+console.log(commonMovies); // Set(2) {'Dangal', '3 Idiots'}
+```
+
+---
+
+## 3. `difference()` — Sirf pehle set me ho, dusre me na ho
+
+`setA.difference(setB)` matlab: A me hai, lekin B me nahi.
+
+```js
+const setA = new Set([1, 2, 3]);
+const setB = new Set([2, 3, 4]);
+
+console.log(setA.difference(setB)); 
+// Set(1) {1}
+```
+
+⚠️ Order matter karta hai:
+```js
+console.log(setB.difference(setA)); 
+// Set(1) {4}
+```
+
+**Real-life use case:** Ek e-commerce app me, konse products cart me hain jo wishlist me nahi hain.
+```js
+const cart = new Set(["Shoes", "Watch", "Bag"]);
+const wishlist = new Set(["Watch", "Phone"]);
+
+const onlyInCart = cart.difference(wishlist);
+console.log(onlyInCart); // Set(2) {'Shoes', 'Bag'}
+```
+
+---
+
+## 4. `symmetricDifference()` — Jo dono me common NA ho
+
+Dono sets ke elements jo **sirf ek** me hain (common wale hata do).
+
+```js
+const setA = new Set([1, 2, 3]);
+const setB = new Set([2, 3, 4]);
+
+console.log(setA.symmetricDifference(setB)); 
+// Set(2) {1, 4}
+```
+
+**Real-life use case:** Do teams ke players ki list, sirf wo players jo **sirf ek** team me hain (transfer hue players dhundhne ke liye).
+```js
+const teamLastYear = new Set(["Virat", "Rohit", "Bumrah"]);
+const teamThisYear = new Set(["Rohit", "Bumrah", "Shami"]);
+
+const changedPlayers = teamLastYear.symmetricDifference(teamThisYear);
+console.log(changedPlayers); // Set(2) {'Virat', 'Shami'}
+```
+
+---
+
+## 5. `isSubsetOf()` — Kya A, B ka subset hai?
+
+Check karta hai ki `setA` ke saare elements `setB` me maujood hain ya nahi.
+
+```js
+const setA = new Set([1, 2]);
+const setB = new Set([1, 2, 3, 4]);
+
+console.log(setA.isSubsetOf(setB)); // true
+```
+
+**Real-life use case:** Check karo ki user ke selected permissions, admin ke allowed permissions ke andar aate hain ya nahi.
+```js
+const userPermissions = new Set(["read", "write"]);
+const allowedPermissions = new Set(["read", "write", "delete", "admin"]);
+
+console.log(userPermissions.isSubsetOf(allowedPermissions)); // true
+```
+
+---
+
+## 6. `isSupersetOf()` — Kya A, B ka superset hai?
+
+Ye `isSubsetOf()` ka **ulta** hai — check karta hai ki `setB` ke saare elements `setA` me hain.
+
+```js
+const setA = new Set([1, 2, 3, 4]);
+const setB = new Set([1, 2]);
+
+console.log(setA.isSupersetOf(setB)); // true
+```
+
+**Real-life use case:** Check karo ki ek user ke pass saari required skills hain ya nahi (job requirement).
+```js
+const userSkills = new Set(["JS", "React", "Node", "CSS"]);
+const requiredSkills = new Set(["JS", "React"]);
+
+console.log(userSkills.isSupersetOf(requiredSkills)); // true
+```
+
+---
+
+## 7. `isDisjointFrom()` — Kya dono sets me kuch bhi common nahi?
+
+**Disjoint** matlab bilkul alag — koi bhi common element nahi.
+
+```js
+const setA = new Set([1, 2, 3]);
+const setB = new Set([4, 5, 6]);
+
+console.log(setA.isDisjointFrom(setB)); // true (koi common nahi)
+
+const setC = new Set([3, 4]);
+console.log(setA.isDisjointFrom(setC)); // false (3 common hai)
+```
+
+**Real-life use case:** Schedule clash check — do meetings ke time slots overlap toh nahi kar rahe.
+```js
+const meeting1Slots = new Set(["10AM", "11AM"]);
+const meeting2Slots = new Set(["2PM", "3PM"]);
+
+console.log(meeting1Slots.isDisjointFrom(meeting2Slots)); // true (clash nahi hai)
+```
+
+---
+
+## Quick Summary Table
+
+| Method | Kya karta hai |
+|---|---|
+| `union()` | Dono sets ka combined result |
+| `intersection()` | Sirf common elements |
+| `difference()` | A me hai, B me nahi |
+| `symmetricDifference()` | Sirf ek set me ho (common ko chhod ke) |
+| `isSubsetOf()` | A, B ke andar fit hota hai? |
+| `isSupersetOf()` | A, B ko cover karta hai? |
+| `isDisjointFrom()` | Kuch bhi common nahi hai? |
+
+⚠️ Note: Ye methods bahut naye hain (2024-2025 baseline). Purane browsers ya Node.js versions me kaam nahi karenge — check karna zaroori hai.
+
+---
+
+## Practice Questions
+
+**Q1.** Do arrays diye hain — `["JS", "Python", "Go"]` aur `["Python", "Rust", "Go"]`. Set banake batao:
+- Union kya hoga?
+- Intersection kya hoga?
+- Symmetric difference kya hoga?
+
+**Q2.** Ek function likho `hasCommonInterest(setA, setB)` jo `true`/`false` return kare, ye check karke ki dono sets me koi common element hai ya nahi (`isDisjointFrom` use karke).
+
+**Q3.** Ek `checkAccess(userRoles, requiredRoles)` function likho jo check kare ki user ke roles, required roles ka superset hain ya nahi — access dene ke liye.
+
+**Q4.** Real scenario: Do online stores ke product categories hain:
+```js
+const storeA = new Set(["Electronics", "Books", "Clothing"]);
+const storeB = new Set(["Books", "Toys", "Clothing"]);
+```
+Pata karo — kaunse categories **dono** store me hain, aur kaunse **sirf ek** store me hain.
+
+Try karo, phir mujhe answers bhejo — main check kar dunga! 🙂

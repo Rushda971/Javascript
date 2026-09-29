@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    First  Number:
+    <input type="number" id="num1"><br><br>
+
+    Second Number:
+    <input type="number" id="num2"><br><br>
+
+    
+    <h3 >Calculation to perform:</h3>
+    <select name="Select" id="option">
+        <option id="add" value="+">Addition</option>
+        <option id="sub" value="-">Subtraction</option>
+        <option id="multi" value="*">Mutliplication</option>
+        <option id="div"value="/">Division</option>
+    </select><br><br>
+    <button onclick="calculate()">Submit</button>
+    <h3 id="result">result</h3>
+    <script>
+        
+function calculate(){
+let num1=parseInt(document.getElementById("num1").value);
+let num2=parseInt( document.getElementById("num2").value);
+let option=document.getElementById("option").value;
+let result=0;
+let add=num1+num2;
+let sub=num1-num2;
+let mutli=num1*num2;
+let div=num1/num2;
+ if (option=='+'){
+    result=add;
+ }
+ else if(option=='-'){
+    result=sub;
+ }
+ else if(option=='*'){
+    result=mutli;
+ }
+ else if(option=='/'){
+    result=div;
+ }
+ else{
+    result="Invalid";
+ }
+ document.getElementById("result").innerHTML=result;
+
+
+ 
+
+
+
+
+
+console.log()
+}
+
+
+
+
+    </script>
+</body>
+</html>

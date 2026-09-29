@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Factorial Generator</h1>
+    Enter input:
+    <input type="number" id="num" min="1"><br><br>
+      result:
+    <input type="text" readonly id="result"><br><br>
+    
+    <b><button onclick="factorial()">Submit</button></b><br><br>
+  
+
+    <script>
+        
+        //function parameter is never passed when click button
+        function factorial(){
+            let num=parseInt(document.getElementById("num").value);
+            fact=1;
+            for(let i=1;i<=num;i++){
+                fact*=i;
+            }
+            document.getElementById("result").value=fact;
+        }
+        
+        
+    </script>
+</body>
+</html>

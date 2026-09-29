@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+        input:optional {
+            background: lightyellow;
+        }
+        input:valid:hover {
+            border: 3px solid green;
+        }
+        input:invalid {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form action="action.php" method="post">
+        <label>Name:</label><input type="text" required><br><br>
+        <label>Email:</label><input type="email"><br><br>
+        <label>Number: +91 </label><input type="tel" pattern="[0-9]{10}" required><br><br>
+        <label>Referral code</label><input type="text" disabled value="WELCOME299"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+        <!--:disabled → Input use nahi kar sakte
+            :required → Fill karna zaroori
+            :optional → Fill karna optional
+            :valid → Sahi value
+            :invalid → Galat value -->
+</body>
+</html>

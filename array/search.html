@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //alaphabetic sort
+        //sort
+        //const tech=["python","django","api","react"];
+        //console.log(tech.sort());
+        //reverse
+        //console.log(tech.reverse());
+        //tosorted
+        //console.log(tech.toSorted());
+        //toreversed
+        //let methods=tech.toReversed();
+        //console.log(methods);
+
+        //numeric sort
+
+        //nature
+        //agar a neg value is sorted already sorted and if b is positve then b is sorted
+
+        //ascending order
+        const points=[1,2,43,64,43,75,453];
+        points.sort(function(a,b){return a-b})
+        console.log(points);
+        console.log(`lowest value ${points[0]}`)
+
+        //descending sort
+        points.sort(function(a,b){return b-a})
+        console.log(points);
+        console.log(`highest value ${points[0]}`)
+
+        //fisher yates methods
+        //random order chahiye bina repetation-har elmt ek hi bar aaye
+        //i+1 last include karne ke liye 
+
+        function fisherYatesshuffle(arr){
+            for (let i=arr.length-1;i>0;i--){
+                const j=Math.floor(Math.random()*(i+1));
+                [arr[i],arr[j]]=[arr[j],arr[i]];
+            }
+            return arr;
+        }
+
+        const uno=[1,5,6,3];
+        console.log(fisherYatesshuffle(uno));
+
+
+
+    </script>
+</body>
+</html>

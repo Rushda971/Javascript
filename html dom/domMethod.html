@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="demo"></div> -->
+<!-- ##createElement
+direct HTML is best for content that is known in advance, 
+while createElement() is useful when content is created while the page is running. -->
+
+<!-- ## Dynamic html ke liye use karte hai when action depend on user action -->
+<!-- textContent ka use kisi HTML element ke andar text add ya change karne ke liye hota hai. -->
+<script>
+
+const div1 = document.createElement("div");
+const div2 = document.createElement("div");
+const para = document.createElement("p");
+para.innerText="Inner Html";
+div2.appendChild(para);
+div1.appendChild(div2);
+document.body.appendChild(div1);
+
+
+</script>
+</body>
+</html>

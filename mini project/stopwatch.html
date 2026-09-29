@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Stopwatch</h1>
+    <h2 id="result">00:00:00</h2><br>
+    <button id="start">start</button>
+    
+<script>
+    //pad ,stop btn add karna hai 
+    //stopwatch
+    import { Temporal } from "@js-temporal/polyfill";
+const result = document.getElementById("result");
+function Timer(){ 
+    const start=Temporal.Now.instant();
+    
+    const stopwatch=setInterval(()=>{
+    const now=Temporal.Now.instant();
+
+    const diff=start.until(now);
+    //since and until diff
+   
+   result.textContent=(`${diff.minutes}:${diff.seconds}:${diff.milliseconds}`);},100);
+};
+   document.getElementById("start").onclick=Timer;
+  
+
+   
+</script>
+</body>
+</html>

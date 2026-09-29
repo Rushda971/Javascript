@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array</h1>
+    
+    <button onclick="arrayAction()">Length</button><br>
+    <button onclick="arrayAction1()">toString</button><br>
+    <button onclick="arrayAction2()">join</button><br>
+    <button onclick="arrayAction3()">push</button><br>
+    <button onclick="arrayAction4()">pop</button><br>
+    <button onclick="arrayAction5()">unshift</button><br>
+    <button onclick="arrayAction6()">shift</button><br>
+    <button onclick="arrayAction7()">isArray</button><br>
+    <button onclick="arrayAction8()">concat</button><br>
+    <h3 id="result">result:</h3>
+    
+<script>
+    const lang=["html","css","js","php"];
+    document.write("<h2> orginal array: "+ lang+ "</h2>");
+
+    function arrayAction(){
+    let lengths=lang.length;
+    document.getElementById("result").innerHTML= lengths;
+    }
+
+    function arrayAction1(){
+    let strings=lang.toString();
+     document.getElementById("result").innerHTML= strings;
+    }
+    //join
+    function arrayAction2(){
+     document.getElementById("result").innerHTML= lang.join("_");
+    }
+    function arrayAction3(){
+     document.getElementById("result").innerHTML= lang.push("mysql");
+    }
+    function arrayAction4(){
+     document.getElementById("result").innerHTML= lang.pop();
+    }
+    function arrayAction5(){
+     document.getElementById("result").innerHTML= lang.unshift("mysql");
+    }
+    function arrayAction6(){
+     document.getElementById("result").innerHTML= lang.shift();
+    }
+    function arrayAction7(){
+     document.getElementById("result").innerHTML= Array.isArray(lang);
+    }
+    //concat
+    function arrayAction8(){
+        let tech=["Ai","dsa","ds","robotics"];
+        let concats=lang.concat(tech);
+        document.getElementById("result").innerHTML= concats;
+    }
+    //copyWithin
+    function arrayAction9(){
+     document.getElementById("result").innerHTML= Array.isArray(lang);
+    }
+    //flat-create new array within subarray
+    function arrayAction10(){
+     document.getElementById("result").innerHTML= Array.isArray(lang);
+    }
+    //slice
+    function arrayAction11(){
+     document.getElementById("result").innerHTML= Array.isArray(lang);
+    }
+    //toSpliced
+    function arrayAction12(){
+     document.getElementById("result").innerHTML= Array.isArray(lang);
+    }
+
+    </script>
+</body>
+</html>

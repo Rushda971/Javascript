@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+<div id="box"></div>
+    <script>
+        let heading = document.createElement("p");//createElement()-iska use kar ke new elmt bannte hai
+        heading.innerHTML="Hello world Learning Dom";//ye memory mai banata hai but webpage per nhi show karta hai 
+        document.body.appendChild(heading);//tag page mai add hogya hai
+        //appendChild-parent.appendChild(child);<= kisi elemt ko add karta hai 
+        //append()-ye bhi add karta hai per ,Lekin appendChild() se zyada powerful hai.
+        /*Isme
+        Element add kar sakte ho
+        Text add kar sakte ho
+        Multiple cheeze ek saath add kar sakte ho */
+        /*Ye sab **JavaScript DOM (Document Object Model)** ke methods hain. Inka use HTML elements ko create, change aur control karne ke liye hota hai. Ek-ek method ko simple language aur examples ke saath samajhte hain.
+        */
+        let headings = document.createElement("h1");
+        //create elment mai data tag mai respectively show hota hai 
+        headings.innerText = "Hello World";
+        document.body.appendChild(headings);
+
+        const p= document.createElement("p");
+        p.innerText="i m creating paragraph"
+        document.getElementById("box").appendChild(p);
+
+        const div = document.querySelector("#box");
+        const para=document.createElement("p");
+        para.innerText="hello para";
+        div.append(p);
+
+        //the basic diff of appendChild and append is 
+        //appendChild takes only one element
+        //were as append takes multiple element,even it takes text
+
+        //remove
+        //if want to del elemt from page 
+
+</script>
+</body>
+</html>

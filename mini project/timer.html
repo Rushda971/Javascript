@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <h1 id="clock"></h1>
+
+    <script>
+        import { Temporal } from "@js-temporal/polyfill";
+        function updateClock() {
+            const d = new Date();
+
+            const date =
+                `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+
+            const time =
+                `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+
+            document.getElementById("clock").innerHTML =
+                `${date}<br>${time}`;
+        }
+
+        updateClock(); 
+        setInterval(updateClock, 1000); 
+    </script>
+</body>
+</html>
